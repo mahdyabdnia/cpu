@@ -1,5 +1,5 @@
 module finaltestbench;
 clock clk();
-testbench2 tb2();
+testBench tb2();
 
 endmodule
