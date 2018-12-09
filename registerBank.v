@@ -8,16 +8,16 @@ reg [63:0] mem [0:31];
 
 
 
-assign  #2 data_a = mem[Ad_a];
-assign  #2 data_b = mem[Ad_b];
+assign  data_a = mem[Ad_a];
+assign   data_b = mem[Ad_b];
 
 always @(negedge clk)
 begin
 if(wr_acc)
-if(data_wr !=4'd31)
-mem[Ad_c]<= #3 data_wr;
+if(data_wr !=64'b0)
+mem[Ad_c]<=  data_wr;
 else 
-mem[0] <= #3 'd0;
+mem[0] <=  'd0;
 end 
 endmodule 
 
