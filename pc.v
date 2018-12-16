@@ -1,5 +1,5 @@
-module pc(clk,reset,wr,counter)
-input clk;
+module pc(clk,reset,w,wr,counter)
+input clk,w;
 input reset;
 input [0:63]wr;
 output reg [0:63]counter;
@@ -12,18 +12,18 @@ output reg [0:63]counter;
 always @(negedge clk)
 begin 
 
-if(posedge reset)
-begin 
+	if(posedge reset)
+		begin 
 
-counter<=counter+0;
+			counter<=0;
 
-end
+		end
 
-else
-begin 
-counter<=counter+wr;
+		else if (w=1)
+		begin 
+			counter<=wr;
 
-end
+		end
 
 
 
