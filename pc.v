@@ -15,13 +15,13 @@ begin
 if(posedge reset)
 begin 
 
-counter<=counter+wr;
+counter<=counter+0;
 
 end
 
 else
 begin 
-counter<=counter+0;
+counter<=counter+wr;
 
 end
 

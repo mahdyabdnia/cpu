@@ -1,7 +1,7 @@
-module InstMem(addr,inst)
+module InstMem(addr,clk,re_acc,inst)
 input [0:31]addr;
 output reg [0:31]inst;
-reg [0;31]mem[255:0];
+reg [0:31]mem[255:0];
 input re_acc;
 input clk;
 

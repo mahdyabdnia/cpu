@@ -5,7 +5,7 @@ output reg[0:63] out;
 
 
 assign imm=64'b100
-always @(in)
+always @(in,imm)
 begin 
 
 out=in + imm;
