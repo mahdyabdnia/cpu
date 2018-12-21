@@ -1,26 +1,16 @@
-module InstMem(addr,clk,re_acc,inst)
-input [0:63]addr;
-output reg [0:31]inst;
-reg [0:63]mem[255:0];
+module InstMem(adrs,clk,re_acc,inst);
+
+output reg [0:63]inst;
+input [0:63]adrs;
 input re_acc;
 input clk;
+reg [0:63]mem[255:0];
+
 
 always@(negedge clk)
 begin 
-if(re_acc=1'b1)
-begin 
-inst<=mem[addr];
-
-
-
-
-
+if(re_acc==1'b1)
+ 
+inst<=mem[adrs];
 end
-end
-
-
-
-
-
-
 endmodule
