@@ -10,7 +10,7 @@ begin
 if( reset==1)
  counter<=0;
 
-else if(w==0)
+else if(w==1)
 counter<=wr;
 end
 endmodule
