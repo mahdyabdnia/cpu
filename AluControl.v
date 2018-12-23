@@ -9,11 +9,11 @@ if(AluOp[1]==0)
 begin
  if(AluOp[0]==0)
    begin
-     AluCn<=4'b01;
+     AluCn<=4'b10; //ldur,stur
    end
  else
    begin
-     AluCn<=4'b0111;
+     AluCn<=4'b0111;Cbz
 
    end
 
@@ -26,21 +26,21 @@ else
 
    if(opcode==11'b10001011000)
      begin
-       AluCn<=4'b10;
+       AluCn<=4'b10;//Add
      end
    
    else if(opcode==11'b11001011000)
       begin
-      AluCn<=4'b110;
+      AluCn<=4'b110;//sub
       end
      
       else if(opcode==11'b10001010000)
       begin
-      AluCn<=4'b0;
+      AluCn<=4'b0;//and
       end
       else
         begin
-          AluCn<=4'b1;
+          AluCn<=4'b1;//or
         end
       
        
