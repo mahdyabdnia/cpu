@@ -18,18 +18,18 @@ always@(instruction)
 begin 
 if(instruction==11'b11111000000)
   
-    {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b11x001000;
+    {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'bx11110000;//ldur
   
 else if(instruction==11'b11111000010)
   
-     {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b11x001000;
+     {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b11x001000;//stur
   
 else if(instruction==11'b10110100xxx)
      
-      {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b10x000101;
+      {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b10x000101;//cbz
     
 else 
   
-      {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b000100010;
+      {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b000100010;//Rtype
  end
 endmodule
