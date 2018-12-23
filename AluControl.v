@@ -13,7 +13,7 @@ begin
    end
  else
    begin
-     AluCn<=4'b0111;Cbz
+     AluCn<=4'b0111;//Cbz
 
    end
 
