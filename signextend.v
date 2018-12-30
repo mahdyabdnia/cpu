@@ -1,11 +1,20 @@
-module signextend(ininst,outinst);
-input [0:31]ininst;
-output  [0:63]outinst;
+module signextend(ininst,aluop,outinst);
+input [31:0]ininst;
+input [0:1] aluop;
+output reg [63:0]outinst;
 
-assign outinst={{32{ininst[0]}},ininst};
+always @(aluop,ininst)
+begin
+
+if(aluop==2'b00)
+  outinst={{55{ininst[11]}},ininst[20:12]};
+else
+   outinst={{45{ininst[8]}},ininst[23:5]};                                               
 
 
 
 
 
+
+end
 endmodule 

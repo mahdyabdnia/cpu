@@ -1,8 +1,8 @@
-module mux2to1(inA,inB,select,out);
-input [0:63]inA;
-input [0:63]inB;
+module mux2to1 #(parameter n=64)(inA,inB,select,out);
+input [n-1:0]inA;
+input [n-1:0]inB;
 input select;
-output reg [0:63]out;
+output reg [n-1:0]out;
 
 always@(inA,inB,select)
 begin

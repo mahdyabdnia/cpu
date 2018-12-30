@@ -2,8 +2,8 @@ module pc(clk,reset,wr,w,counter);
 input clk;
 input reset;
 input w;
-input [0:63]wr;
-output reg [0:63]counter;
+input [63:0]wr;
+output reg [63:0]counter;
 always @(negedge clk)
 begin 
 

@@ -1,10 +1,10 @@
-module InstMem(adrs,clk,re_acc,inst);
+module InstMem(clk,adrs,re_acc,inst);
 
-output reg [0:63]inst;
-input [0:63]adrs;
+output reg [63:0]inst;
+input [63:0]adrs;
 input re_acc;
 input clk;
-reg [0:63]mem[255:0];
+reg [63:0]mem[255:0];
 
 
 always@(negedge clk)

@@ -18,15 +18,15 @@ always@(instruction)
 begin 
 if(instruction==11'b11111000000)
   
-    {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'bx11110000;//ldur
+    {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b011110000;//ldur
   
 else if(instruction==11'b11111000010)
   
-     {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b11x001000;//stur
+     {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b110001000;//stur
   
-else if(instruction==11'b10110100xxx)
+else if(instruction[10:3]==11'b10110100)
      
-      {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b10x000101;//cbz
+      {reg2loc,ALUsrc,MemToReg,RegWrite,MemRead,MemWrite,br,ALUOp}<=9'b100000101;//cbz
     
 else 
   

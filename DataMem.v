@@ -2,9 +2,9 @@ module DataMem(clk,mem_wr,mem_re,address,wr_data,re_data);
 input mem_wr;
 input mem_re;
 input clk;
-input [0:63]address;
-input [0:63]wr_data;
-output reg  [0:63]re_data;
+input [63:0]address;
+input [63:0]wr_data;
+output reg  [63:0]re_data;
 reg [63:0]mem[0:255];
 
 
